@@ -30,11 +30,11 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "shophub.onrender.com",
+    "shophub-cj54.onrender.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://shophub.onrender.com",
+    "https://shophub-cj54.onrender.com",
 ]
 
 
