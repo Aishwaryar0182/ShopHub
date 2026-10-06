@@ -1,0 +1,172 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'products/style.css' %}?v=10"
+    >
+
+    <title>Order Details - ShopHub</title>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <a href="{% url 'home' %}">
+            ShopHub
+        </a>
+
+    </div>
+
+    <nav>
+
+        <a href="{% url 'home' %}">
+            Home
+        </a>
+
+        <a href="{% url 'view_cart' %}">
+            Cart
+        </a>
+
+        <a href="{% url 'wishlist' %}">
+            ❤️ Wishlist
+        </a>
+
+        <a href="{% url 'my_orders' %}">
+            📦 My Orders
+        </a>
+
+        <span class="welcome">
+            Hi, {{ request.user.username }}
+        </span>
+
+        <a href="{% url 'logout' %}">
+            Logout
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="container">
+
+    <h1>
+        Order #{{ order.id }}
+    </h1>
+
+
+    <div class="success-card">
+
+        <h2>
+            Order Details
+        </h2>
+
+        <p>
+            <strong>Date:</strong>
+            {{ order.created_at|date:"d M Y, h:i A" }}
+        </p>
+
+        <p>
+            <strong>Customer:</strong>
+            {{ order.customer_name }}
+        </p>
+
+        <p>
+            <strong>Phone:</strong>
+            {{ order.phone }}
+        </p>
+
+        <p>
+            <strong>Address:</strong>
+            {{ order.address }}
+        </p>
+
+    </div>
+
+
+    <h2>
+        Ordered Products
+    </h2>
+
+
+    {% for item in order.items.all %}
+
+        <div class="cart-item">
+
+            {% if item.product and item.product.image %}
+
+                <img
+                    src="{{ item.product.image.url }}"
+                    alt="{{ item.product_name }}"
+                >
+
+            {% else %}
+
+                <div class="no-image">
+                    No Image
+                </div>
+
+            {% endif %}
+
+
+            <div class="cart-details">
+
+                <h3>
+                    {{ item.product_name }}
+                </h3>
+
+                <p>
+                    Price: ₹{{ item.price }}
+                </p>
+
+                <p>
+                    Quantity: {{ item.quantity }}
+                </p>
+
+                <p>
+                    Subtotal:
+                    ₹{% widthratio item.price 1 item.quantity %}
+                </p>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+
+    <div class="cart-total">
+
+        <h2>
+            Total: ₹{{ order.total_amount }}
+        </h2>
+
+        <a
+            href="{% url 'my_orders' %}"
+            class="view-button"
+        >
+            Back to My Orders
+        </a>
+
+    </div>
+
+</main>
+
+</body>
+</html>

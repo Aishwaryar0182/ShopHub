@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'products/style.css' %}?v=10"
+    >
+
+    <title>Order Successful - ShopHub</title>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <a href="{% url 'home' %}">
+            ShopHub
+        </a>
+
+    </div>
+
+    <nav>
+
+        <a href="{% url 'home' %}">
+            Home
+        </a>
+
+        <a href="{% url 'view_cart' %}">
+            Cart
+        </a>
+
+        <a href="{% url 'wishlist' %}">
+            ❤️ Wishlist
+        </a>
+
+        <a href="{% url 'my_orders' %}">
+            📦 My Orders
+        </a>
+
+        <span class="welcome">
+            Hi, {{ request.user.username }}
+        </span>
+
+        <a href="{% url 'logout' %}">
+            Logout
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="container">
+
+    <div class="success-card">
+
+        <h1>
+            🎉 Order Placed Successfully!
+        </h1>
+
+        <p>
+            Thank you for your order,
+            <strong>{{ order.customer_name }}</strong>.
+        </p>
+
+        <p>
+            Your order number is:
+            <strong>#{{ order.id }}</strong>
+        </p>
+
+        <p>
+            Total amount:
+            <strong>₹{{ order.total_amount }}</strong>
+        </p>
+
+        <br>
+
+        <a
+            href="{% url 'order_detail' order.id %}"
+            class="view-button"
+        >
+            View Order
+        </a>
+
+        <a
+            href="{% url 'my_orders' %}"
+            class="view-button"
+        >
+            My Orders
+        </a>
+
+        <a
+            href="{% url 'home' %}"
+            class="view-button"
+        >
+            Continue Shopping
+        </a>
+
+    </div>
+
+</main>
+
+</body>
+</html>

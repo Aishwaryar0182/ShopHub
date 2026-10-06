@@ -1,0 +1,86 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub | Cart</title>
+    <link rel="stylesheet" href="{% static 'products/style.css' %}">
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="{% url 'home' %}">ShopHub</a>
+        <nav>
+            <a href="{% url 'home' %}">Continue Shopping</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Your Shopping Cart</h1>
+
+        {% if cart_items %}
+            {% for item in cart_items %}
+                <article class="cart-item">
+                    {% if item.product.image %}
+                        <img src="{{ item.product.image.url }}"
+                             alt="{{ item.product.name }}">
+                    {% endif %}
+
+                    <div class="cart-details">
+                        <h3>{{ item.product.name }}</h3>
+                        <p>Price: ₹{{ item.product.price }}</p>
+                        <p>Subtotal: ₹{{ item.subtotal }}</p>
+
+                        <div class="cart-actions">
+                            <form method="POST"
+                                  action="{% url 'update_cart' item.product.id %}">
+                                {% csrf_token %}
+                                <button name="action" value="decrease">−</button>
+                            </form>
+
+                            <span>{{ item.quantity }}</span>
+
+                            <form method="POST"
+                                  action="{% url 'update_cart' item.product.id %}">
+                                {% csrf_token %}
+                                <button name="action" value="increase">+</button>
+                            </form>
+
+                            <form method="POST"
+                                  action="{% url 'update_cart' item.product.id %}">
+                                {% csrf_token %}
+                                <button name="action" value="remove"
+                                        class="danger-button">Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+
+            <section class="cart-total">
+                <h2>Total: ₹{{ total }}</h2>
+
+                <a href="{% url 'checkout' %}" class="button">
+                    Proceed to Checkout
+                </a>
+
+                <form method="POST" action="{% url 'clear_cart' %}">
+                    {% csrf_token %}
+                    <button class="danger-button" type="submit">
+                        Clear Cart
+                    </button>
+                </form>
+            </section>
+        {% else %}
+            <div class="empty-state">
+                <h2>Your cart is empty</h2>
+                <p>Add some products before checking out.</p>
+                <a href="{% url 'home' %}" class="button">
+                    Browse Products
+                </a>
+            </div>
+        {% endif %}
+    </main>
+</body>
+</html>

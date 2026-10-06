@@ -1,0 +1,58 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | ShopHub</title>
+    <link rel="stylesheet" href="{% static 'products/style.css' %}">
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="{% url 'home' %}">ShopHub</a>
+        <a href="{% url 'view_cart' %}">Back to Cart</a>
+    </header>
+
+    <main class="container narrow-container">
+        <h1>Checkout</h1>
+
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+
+        <section class="checkout-summary">
+            <h2>Order Summary</h2>
+
+            {% for item in cart_items %}
+                <p>
+                    {{ item.product.name }} × {{ item.quantity }}
+                    — ₹{{ item.subtotal }}
+                </p>
+            {% endfor %}
+
+            <h3>Total: ₹{{ total }}</h3>
+        </section>
+
+        <form method="POST" class="checkout-form">
+            {% csrf_token %}
+
+            <label for="customer_name">Full Name</label>
+            <input id="customer_name" type="text"
+                   name="customer_name" maxlength="100" required>
+
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="tel"
+                   name="phone" maxlength="15" required>
+
+            <label for="address">Delivery Address</label>
+            <textarea id="address" name="address"
+                      rows="4" required></textarea>
+
+            <button class="full-button" type="submit">
+                Place Order
+            </button>
+        </form>
+    </main>
+</body>
+</html>
