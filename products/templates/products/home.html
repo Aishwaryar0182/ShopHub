@@ -8,7 +8,7 @@
 
     <title>ShopHub</title>
 
-    <link rel="stylesheet" href="{% static 'products/style.css' %}?v=10">
+    <link rel="stylesheet" href="{% static 'products/style.css' %}?v=11">
 
     <style>
         .navbar {
@@ -42,6 +42,7 @@
         .welcome {
             text-align: center;
             margin: 45px 0 25px;
+            color: #182a5a;
         }
 
         .search-container {
@@ -89,6 +90,11 @@
         }
 
         .category-btn:hover {
+            background: #182a5a;
+            color: white;
+        }
+
+        .category-btn.active {
             background: #182a5a;
             color: white;
         }
@@ -180,11 +186,6 @@
             background: #ffe6e6;
         }
 
-        .login-message {
-            text-align: center;
-            margin: 20px;
-        }
-
         @media (max-width: 700px) {
             .navbar {
                 flex-direction: column;
@@ -257,8 +258,6 @@
     </div>
 
 
-    <!-- SEARCH -->
-
     <form method="GET" action="{% url 'home' %}" class="search-container">
 
         <input
@@ -275,34 +274,28 @@
     </form>
 
 
-    <!-- CATEGORIES -->
-
     <div class="categories">
 
-        <a href="{% url 'home' %}" class="category-btn">
+        <a
+            href="{% url 'home' %}"
+            class="category-btn {% if not request.GET.category %}active{% endif %}"
+        >
             All
         </a>
 
-        <a href="{% url 'home' %}?category=Electronics" class="category-btn">
-            Electronics
-        </a>
+        {% for category in categories %}
 
-        <a href="{% url 'home' %}?category=Fashion" class="category-btn">
-            Fashion
-        </a>
+            <a
+                href="{% url 'home' %}?category={{ category|urlencode }}"
+                class="category-btn {% if request.GET.category == category %}active{% endif %}"
+            >
+                {{ category }}
+            </a>
 
-        <a href="{% url 'home' %}?category=Home & Kitchen" class="category-btn">
-            Home & Kitchen
-        </a>
-
-        <a href="{% url 'home' %}?category=Beauty" class="category-btn">
-            Beauty
-        </a>
+        {% endfor %}
 
     </div>
 
-
-    <!-- PRODUCTS -->
 
     <div class="product-grid">
 
@@ -397,7 +390,7 @@
 
         {% empty %}
 
-            <p style="text-align:center; width:100%;">
+            <p style="text-align: center; width: 100%;">
                 No products found.
             </p>
 
