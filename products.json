@@ -7,7 +7,7 @@
     "description": "Comfortable headphone with wireless feature.",
     "category": "Electronic",
     "price": "1900.00",
-    "image": "products/headphone.jpg",
+    "image": "media/products/headphone_mq3mec",
     "stock": 14,
     "created_at": "2026-10-04T14:00:01.500Z"
   }
@@ -20,7 +20,7 @@
     "description": "Best smart watch for tracking ,walking with Bluetooth calling feature.",
     "category": "Electronic",
     "price": "1500.00",
-    "image": "products/smartwatch.jpg",
+    "image": "media/products/smartwatch_jcbqwo",
     "stock": 17,
     "created_at": "2026-10-04T14:45:32.968Z"
   }
@@ -33,7 +33,7 @@
     "description": "Comfortable sports shoes for running and daily wear.",
     "category": "Fashion",
     "price": "1999.00",
-    "image": "products/shoes.jpg",
+    "image": "media/products/shoes_m90mva",
     "stock": 10,
     "created_at": "2026-10-04T20:08:11.488Z"
   }
@@ -46,7 +46,7 @@
     "description": "Laptop suitable for study, office work and entertainment.",
     "category": "Electronic",
     "price": "54600.00",
-    "image": "products/lap.jpg",
+    "image": "media/products/lap_e7ijo4",
     "stock": 5,
     "created_at": "2026-10-04T20:12:27.003Z"
   }
@@ -59,7 +59,7 @@
     "description": "Digital camera for capturing photos and special moments.",
     "category": "Electronic",
     "price": "24499.00",
-    "image": "products/cam.jpg",
+    "image": "media/products/cam_z6sypc",
     "stock": 15,
     "created_at": "2026-10-04T20:16:23.207Z"
   }
@@ -72,7 +72,7 @@
     "description": "Stylish sunglasses for everyday use.",
     "category": "Fashion",
     "price": "799.00",
-    "image": "products/sun.jpg",
+    "image": "media/products/sun_u9tdjj",
     "stock": 5,
     "created_at": "2026-10-04T20:17:54.130Z"
   }
@@ -85,7 +85,7 @@
     "description": "Reusable ceramic mug for coffee and tea.",
     "category": "Home & Kitchen",
     "price": "199.00",
-    "image": "products/mug.jpg",
+    "image": "media/products/mug_vptvoa",
     "stock": 40,
     "created_at": "2026-10-04T20:23:29.927Z"
   }
@@ -98,7 +98,7 @@
     "description": "Modern desk lamp for your study table or office.",
     "category": "Home & Kitchen",
     "price": "899.00",
-    "image": "products/desk_lamp.jpg",
+    "image": "media/products/desk_lamp_e10zpl",
     "stock": 15,
     "created_at": "2026-10-04T20:25:41.417Z"
   }
@@ -111,7 +111,7 @@
     "description": "Portable speaker for music at home or outdoors.",
     "category": "Electronic",
     "price": "1799.00",
-    "image": "products/speak.jpg",
+    "image": "media/products/speak_mooxqd",
     "stock": 22,
     "created_at": "2026-10-04T20:28:14.530Z"
   }
@@ -124,7 +124,7 @@
     "description": "Compact wallet with multiple card slots.",
     "category": "Fashion",
     "price": "699.00",
-    "image": "products/wallet.jpg",
+    "image": "media/products/wallet_r2nr1c",
     "stock": 28,
     "created_at": "2026-10-04T20:32:21.491Z"
   }
@@ -137,7 +137,7 @@
     "description": "Reusable water bottle for work, college and travel.",
     "category": "Home & Kitchen",
     "price": "399.00",
-    "image": "products/water_bottle.jpg",
+    "image": "media/products/water_bottle_jxtn05",
     "stock": 35,
     "created_at": "2026-10-04T20:35:16.416Z"
   }
@@ -150,7 +150,7 @@
     "description": "Wireless mouse for laptops and desktop computers.",
     "category": "Electronic",
     "price": "599.00",
-    "image": "products/wirm.jpg",
+    "image": "media/products/wirm_zerros",
     "stock": 24,
     "created_at": "2026-10-04T20:36:13.406Z"
   }
@@ -163,7 +163,7 @@
     "description": "Responsive keyboard for typing, work and gaming.",
     "category": "Electronic",
     "price": "1999.00",
-    "image": "products/key.jpg",
+    "image": "media/products/key_uyckwn",
     "stock": 12,
     "created_at": "2026-10-04T20:38:56.145Z"
   }
@@ -176,7 +176,7 @@
     "description": "Classic wrist watch for everyday wear.",
     "category": "Fashion",
     "price": "1999.00",
-    "image": "products/wat_KuTMR9R.jpg",
+    "image": "media/products/wat_KuTMR9R_ekhz6s",
     "stock": 16,
     "created_at": "2026-10-04T20:39:34.802Z"
   }
@@ -189,7 +189,7 @@
     "description": "Comfortable cotton T-shirt for casual outfits.",
     "category": "Fashion",
     "price": "199.00",
-    "image": "products/tshirt.jpg",
+    "image": "media/products/tshirt_ruqhj6",
     "stock": 32,
     "created_at": "2026-10-04T20:43:20.756Z"
   }
@@ -202,7 +202,7 @@
     "description": "Compact wireless earbuds for music and calls.",
     "category": "Electronic",
     "price": "1299.00",
-    "image": "products/earbuds.jpg",
+    "image": "media/products/earbuds_toltih",
     "stock": 20,
     "created_at": "2026-10-04T20:44:21.600Z"
   }
@@ -215,7 +215,7 @@
     "description": "Lightweight sneakers for everyday activities.",
     "category": "Fashion",
     "price": "19990.00",
-    "image": "products/Sports_sneakers.jpg",
+    "image": "media/products/Sports_sneakers_rm175j",
     "stock": 21,
     "created_at": "2026-10-04T20:45:46.797Z"
   }
@@ -228,7 +228,7 @@
     "description": "Minimalist wall clock for home or office.",
     "category": "Home & Kitchen",
     "price": "399.00",
-    "image": "products/Wall_clock.jpg",
+    "image": "media/products/Wall_clock_dj7w0l",
     "stock": 14,
     "created_at": "2026-10-04T20:46:17.490Z"
   }
@@ -241,7 +241,7 @@
     "description": "Decorative vase for living rooms and bedrooms.",
     "category": "Home & Kitchen",
     "price": "599.00",
-    "image": "products/vase.jpg",
+    "image": "media/products/vase_hrs6ff",
     "stock": 17,
     "created_at": "2026-10-04T20:47:23.518Z"
   }
@@ -254,7 +254,7 @@
     "description": "Stylish slim-fit blue jeans made for comfortable everyday wear with a modern denim finish.",
     "category": "Fashion",
     "price": "1499.00",
-    "image": "products/jeans.jpg",
+    "image": "media/products/jeans_ily8oh",
     "stock": 20,
     "created_at": "2026-10-06T20:27:28.514Z"
   }
@@ -267,7 +267,7 @@
     "description": "Soft and comfortable casual hoodie designed for cool weather and everyday outdoor wear.",
     "category": "Fashion",
     "price": "1299.00",
-    "image": "products/hoodie.jpg",
+    "image": "media/products/hoodie_uxzspp",
     "stock": 10,
     "created_at": "2026-10-06T20:28:23.422Z"
   }
@@ -280,7 +280,7 @@
     "description": "Classic check-pattern casual shirt that works well with jeans and trousers for everyday outfits.",
     "category": "Fashion",
     "price": "999.00",
-    "image": "products/shirt.jpg",
+    "image": "media/products/shirt_qt58lo",
     "stock": 18,
     "created_at": "2026-10-06T20:29:14.123Z"
   }
@@ -293,7 +293,7 @@
     "description": "Lightweight and comfortable summer dress with a stylish design suitable for casual occasions.",
     "category": "Fashion",
     "price": "1599.00",
-    "image": "products/women_dress.jpg",
+    "image": "media/products/women_dress_atyjbg",
     "stock": 12,
     "created_at": "2026-10-06T20:30:07.213Z"
   }
@@ -306,7 +306,7 @@
     "description": "Elegant everyday handbag with enough space for personal essentials and a stylish finish.",
     "category": "Fashion",
     "price": "1299.00",
-    "image": "products/handbag.jpg",
+    "image": "media/products/handbag_dzrno1",
     "stock": 10,
     "created_at": "2026-10-06T20:33:15.293Z"
   }
@@ -319,7 +319,7 @@
     "description": "Comfortable casual baseball cap with an adjustable fit, perfect for everyday outdoor activities.",
     "category": "Fashion",
     "price": "499.00",
-    "image": "products/cap.jpg",
+    "image": "media/products/cap_s4djos",
     "stock": 25,
     "created_at": "2026-10-06T20:36:06.795Z"
   }
@@ -332,7 +332,7 @@
     "description": "Durable non-stick frying pan suitable for everyday cooking, with a comfortable handle and easy-to-clean surface.",
     "category": "Home & Kitchen",
     "price": "899.00",
-    "image": "products/pan.jpg",
+    "image": "media/products/pan_g6uv6z",
     "stock": 15,
     "created_at": "2026-10-06T20:39:36.176Z"
   }
@@ -345,7 +345,7 @@
     "description": "Fast-boiling electric kettle designed for preparing hot water, tea and coffee quickly and conveniently.",
     "category": "Home & Kitchen",
     "price": "1299.00",
-    "image": "products/kettle.jpg",
+    "image": "media/products/kettle_jrtijl",
     "stock": 12,
     "created_at": "2026-10-06T20:44:04.012Z"
   }
@@ -358,7 +358,7 @@
     "description": "Set of durable kitchen storage containers designed to keep food items organized and fresh.",
     "category": "Home & Kitchen",
     "price": "799.00",
-    "image": "products/box.jpg",
+    "image": "media/products/box_yhqvtc",
     "stock": 20,
     "created_at": "2026-10-06T20:45:21.612Z"
   }
@@ -371,7 +371,7 @@
     "description": "Soft and comfortable cotton bedsheet with a stylish design, suitable for everyday bedroom use.",
     "category": "Home & Kitchen",
     "price": "1199.00",
-    "image": "products/bedsheet.jpg",
+    "image": "media/products/bedsheet_xc1mqm",
     "stock": 10,
     "created_at": "2026-10-06T20:47:33.631Z"
   }
@@ -384,7 +384,7 @@
     "description": "Comfortable decorative cushion set designed to add style and comfort to sofas, chairs and beds.",
     "category": "Home & Kitchen",
     "price": "599.00",
-    "image": "products/cushion.jpg",
+    "image": "media/products/cushion_d4hpzl",
     "stock": 20,
     "created_at": "2026-10-06T20:49:10.851Z"
   }
@@ -397,7 +397,7 @@
     "description": "Compact digital kitchen scale for accurately measuring ingredients while cooking and baking.",
     "category": "Home & Kitchen",
     "price": "299.00",
-    "image": "products/scale.jpg",
+    "image": "media/products/scale_viipyy",
     "stock": 15,
     "created_at": "2026-10-06T20:51:22.004Z"
   }
@@ -410,7 +410,7 @@
     "description": "Hydrating face moisturizer that helps keep skin soft and refreshed",
     "category": "Beauty",
     "price": "599.00",
-    "image": "products/moisturizer.jpg",
+    "image": "media/products/moisturizer_u3vkfm",
     "stock": 12,
     "created_at": "2026-10-06T20:53:00.539Z"
   }
@@ -423,7 +423,7 @@
     "description": "Gentle face wash designed to remove dirt and excess oil while keeping the skin fresh.",
     "category": "Beauty",
     "price": "399.00",
-    "image": "products/Facewash.jpg",
+    "image": "media/products/Facewash_bfzy5y",
     "stock": 25,
     "created_at": "2026-10-06T20:54:08.048Z"
   }
@@ -436,7 +436,7 @@
     "description": "Lightweight face serum designed to provide hydration and support a fresh-looking complexion.",
     "category": "Beauty",
     "price": "899.00",
-    "image": "products/serum_oR8Dyao.jpg",
+    "image": "media/products/serum_oR8Dyao_iadx2j",
     "stock": 10,
     "created_at": "2026-10-06T20:54:58.200Z"
   }
@@ -449,7 +449,7 @@
     "description": "Elegant everyday fragrance with a pleasant and long-lasting scent suitable for different occasions.",
     "category": "Beauty",
     "price": "999.00",
-    "image": "products/perfume.jpg",
+    "image": "media/products/perfume_luxzxz",
     "stock": 20,
     "created_at": "2026-10-06T20:56:50.059Z"
   }
@@ -462,7 +462,7 @@
     "description": "Moisturizing body lotion that helps keep skin hydrated and soft throughout the day.",
     "category": "Beauty",
     "price": "499.00",
-    "image": "products/lotion.jpg",
+    "image": "media/products/lotion_wy1fzm",
     "stock": 20,
     "created_at": "2026-10-06T20:59:39.388Z"
   }
@@ -475,7 +475,7 @@
     "description": "Nourishing hair conditioner that helps make hair smooth, soft and easier to manage.",
     "category": "Beauty",
     "price": "499.00",
-    "image": "products/conditioner.jpg",
+    "image": "media/products/conditioner_y3wpdi",
     "stock": 18,
     "created_at": "2026-10-06T21:00:23.582Z"
   }
@@ -488,7 +488,7 @@
     "description": "Everyday shampoo designed to gently cleanse the hair and keep it fresh and manageable.",
     "category": "Beauty",
     "price": "499.00",
-    "image": "products/shampoo.jpg",
+    "image": "media/products/shampoo_zbnsl8",
     "stock": 20,
     "created_at": "2026-10-06T21:00:54.355Z"
   }
@@ -501,7 +501,7 @@
     "description": "Lightweight sunscreen that helps protect the skin from harmful UV rays during outdoor activities.",
     "category": "Beauty",
     "price": "699.00",
-    "image": "products/sunscreen.jpg",
+    "image": "media/products/sunscreen_q0try7",
     "stock": 12,
     "created_at": "2026-10-06T21:02:08.207Z"
   }
@@ -514,7 +514,7 @@
     "description": "Complete makeup brush set with soft bristles suitable for everyday makeup application.",
     "category": "Beauty",
     "price": "799.00",
-    "image": "products/brush.jpg",
+    "image": "media/products/brush_aw1xkb",
     "stock": 15,
     "created_at": "2026-10-06T21:03:17.803Z"
   }
@@ -527,7 +527,7 @@
     "description": "Moisturizing lip balm that helps keep lips soft and prevents dryness.",
     "category": "Beauty",
     "price": "199.00",
-    "image": "products/lipbalm.jpg",
+    "image": "media/products/lipbalm_v4kp2r",
     "stock": 30,
     "created_at": "2026-10-06T21:04:35.317Z"
   }
