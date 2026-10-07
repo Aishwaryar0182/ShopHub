@@ -2,52 +2,224 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <link
-        rel="stylesheet"
-        href="{% static 'products/style.css' %}?v=10"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ShopHub</title>
 
-</head>
+    <link rel="stylesheet" href="{% static 'products/style.css' %}?v=10">
 
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 5%;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .welcome {
+            text-align: center;
+            margin: 45px 0 25px;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 30px auto;
+            max-width: 750px;
+        }
+
+        .search-container input {
+            flex: 1;
+            padding: 15px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .search-container button {
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background: #2860b5;
+            color: white;
+            cursor: pointer;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 30px auto;
+        }
+
+        .category-btn {
+            text-decoration: none;
+            color: #111;
+            border: 1px solid #ccc;
+            padding: 12px 22px;
+            border-radius: 30px;
+            background: white;
+            font-size: 18px;
+        }
+
+        .category-btn:hover {
+            background: #182a5a;
+            color: white;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 30px 5%;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .no-image {
+            color: #777;
+        }
+
+        .product-card h3 {
+            margin: 15px 0 8px;
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .product-category {
+            color: #666;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .product-actions a {
+            text-decoration: none;
+        }
+
+        .view-btn,
+        .cart-btn {
+            padding: 10px 15px;
+            border-radius: 6px;
+            color: white;
+        }
+
+        .view-btn {
+            background: #333;
+        }
+
+        .cart-btn {
+            background: #2860b5;
+        }
+
+        .wishlist-btn {
+            font-size: 22px;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            text-decoration: none;
+        }
+
+        .wishlist-btn:hover {
+            background: #ffe6e6;
+        }
+
+        .login-message {
+            text-align: center;
+            margin: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .search-container {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
 
 <body>
 
-<header class="navbar">
+<nav class="navbar">
 
-    <div class="logo">
+    <h1>ShopHub</h1>
 
-        <a href="{% url 'home' %}">
-            ShopHub
-        </a>
-
-    </div>
-
-
-    <nav>
+    <div class="nav-links">
 
         <a href="{% url 'home' %}">
             Home
         </a>
 
-
         <a href="{% url 'view_cart' %}">
             🛒 Cart ({{ cart_count }})
         </a>
 
-
-        {% if request.user.is_authenticated %}
+        {% if user.is_authenticated %}
 
             <a href="{% url 'wishlist' %}">
                 ❤️ Wishlist
@@ -56,10 +228,6 @@
             <a href="{% url 'my_orders' %}">
                 📦 My Orders
             </a>
-
-            <span class="welcome">
-                Hi, {{ request.user.username }}
-            </span>
 
             <a href="{% url 'logout' %}">
                 Logout
@@ -77,31 +245,27 @@
 
         {% endif %}
 
-    </nav>
+    </div>
 
-</header>
-
-
-<main class="container">
-
-    <h1>
-        Welcome to ShopHub 🛍️
-    </h1>
+</nav>
 
 
-    <!-- Search -->
+<main>
 
-    <form
-        method="GET"
-        action="{% url 'home' %}"
-        class="search-form"
-    >
+    <div class="welcome">
+        <h2>Welcome to ShopHub 🛍️</h2>
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <form method="GET" action="{% url 'home' %}" class="search-container">
 
         <input
             type="text"
             name="q"
             placeholder="Search products..."
-            value="{{ query }}"
+            value="{{ request.GET.q|default:'' }}"
         >
 
         <button type="submit">
@@ -111,73 +275,40 @@
     </form>
 
 
-    <!-- Categories -->
+    <!-- CATEGORIES -->
 
     <div class="categories">
 
-        <a
-            href="{% url 'home' %}"
-            class="{% if not category %}active-category{% endif %}"
-        >
+        <a href="{% url 'home' %}" class="category-btn">
             All
         </a>
 
+        <a href="{% url 'home' %}?category=Electronics" class="category-btn">
+            Electronics
+        </a>
 
-        {% for cat in categories %}
+        <a href="{% url 'home' %}?category=Fashion" class="category-btn">
+            Fashion
+        </a>
 
-            <a
-                href="?category={{ cat|urlencode }}"
-                class="{% if category == cat %}active-category{% endif %}"
-            >
-                {{ cat }}
-            </a>
+        <a href="{% url 'home' %}?category=Home & Kitchen" class="category-btn">
+            Home & Kitchen
+        </a>
 
-        {% endfor %}
+        <a href="{% url 'home' %}?category=Beauty" class="category-btn">
+            Beauty
+        </a>
 
     </div>
 
 
-    <!-- Products -->
+    <!-- PRODUCTS -->
 
     <div class="product-grid">
 
         {% for product in products %}
 
             <div class="product-card">
-
-
-                <!-- Wishlist -->
-
-                {% if request.user.is_authenticated %}
-
-                    <form
-                        method="POST"
-                        action="{% url 'toggle_wishlist' product.id %}"
-                        class="wishlist-form"
-                    >
-
-                        {% csrf_token %}
-
-                        <button
-                            type="submit"
-                            class="heart-button"
-                            title="Add to wishlist"
-                        >
-
-                            {% if product.id in wishlist_ids %}
-                                ❤️
-                            {% else %}
-                                🤍
-                            {% endif %}
-
-                        </button>
-
-                    </form>
-
-                {% endif %}
-
-
-                <!-- Product Image -->
 
                 <div class="product-image-container">
 
@@ -200,84 +331,63 @@
                 </div>
 
 
-                <!-- Product Information -->
-
-                <div class="product-info">
-
-                    <p class="product-category">
-                        {{ product.category }}
-                    </p>
+                <h3>
+                    {{ product.name }}
+                </h3>
 
 
-                    <h2>
-                        {{ product.name }}
-                    </h2>
+                <p class="product-category">
+                    {{ product.category }}
+                </p>
 
 
-                    <p class="description">
-                        {{ product.description }}
-                    </p>
+                <p class="product-price">
+                    ₹{{ product.price }}
+                </p>
 
 
-                    <h3 class="price">
-                        ₹{{ product.price }}
-                    </h3>
+                <p>
+                    Stock: {{ product.stock }}
+                </p>
+
+
+                <div class="product-actions">
+
+                    <a
+                        href="{% url 'product_detail' product.id %}"
+                        class="view-btn"
+                    >
+                        View
+                    </a>
 
 
                     {% if product.stock > 0 %}
 
-                        <p class="stock">
-                            In Stock: {{ product.stock }}
-                        </p>
+                        <a
+                            href="{% url 'add_to_cart' product.id %}"
+                            class="cart-btn"
+                        >
+                            Add to Cart
+                        </a>
 
                     {% else %}
 
-                        <p class="out-stock">
+                        <span>
                             Out of Stock
-                        </p>
+                        </span>
 
                     {% endif %}
 
 
-                    <!-- View Product -->
+                    {% if user.is_authenticated %}
 
-                    <a
-                        href="{% url 'product_detail' product.id %}"
-                        class="view-button"
-                    >
-                        View Product
-                    </a>
-
-
-                    <!-- Add to Cart -->
-
-                    {% if product.stock > 0 %}
-
-                        <form
-                            method="POST"
-                            action="{% url 'add_to_cart' product.id %}"
+                        <a
+                            href="{% url 'toggle_wishlist' product.id %}"
+                            class="wishlist-btn"
+                            title="Wishlist"
                         >
-
-                            {% csrf_token %}
-
-                            <button
-                                type="submit"
-                                class="cart-button"
-                            >
-                                Add to Cart
-                            </button>
-
-                        </form>
-
-                    {% else %}
-
-                        <button
-                            type="button"
-                            class="cart-button"
-                            disabled
-                        >
-                            Out of Stock
-                        </button>
+                            ❤️
+                        </a>
 
                     {% endif %}
 
@@ -287,43 +397,9 @@
 
         {% empty %}
 
-            <div class="empty-state">
-
-                <h2>
-                    No products found
-                </h2>
-
-                {% if query %}
-
-                    <p>
-                        No products matched
-                        "<strong>{{ query }}</strong>".
-                    </p>
-
-                {% elif category %}
-
-                    <p>
-                        No products available in
-                        <strong>{{ category }}</strong>.
-                    </p>
-
-                {% else %}
-
-                    <p>
-                        No products have been added yet.
-                    </p>
-
-                {% endif %}
-
-
-                <a
-                    href="{% url 'home' %}"
-                    class="view-button"
-                >
-                    View All Products
-                </a>
-
-            </div>
+            <p style="text-align:center; width:100%;">
+                No products found.
+            </p>
 
         {% endfor %}
 
@@ -332,5 +408,4 @@
 </main>
 
 </body>
-
 </html>

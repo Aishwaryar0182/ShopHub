@@ -48,18 +48,6 @@ urlpatterns = [
     ),
 
     path(
-        "my-orders/",
-        views.my_orders,
-        name="my_orders"
-    ),
-
-    path(
-        "my-orders/<int:order_id>/",
-        views.order_detail,
-        name="order_detail"
-    ),
-
-    path(
         "register/",
         views.register,
         name="register"
@@ -87,5 +75,17 @@ urlpatterns = [
         "wishlist/toggle/<int:product_id>/",
         views.toggle_wishlist,
         name="toggle_wishlist"
+    ),
+
+    path(
+        "my-orders/",
+        views.my_orders,
+        name="my_orders"
+    ),
+
+    path(
+        "my-orders/<int:order_id>/",
+        views.order_detail,
+        name="order_detail"
     ),
 ]

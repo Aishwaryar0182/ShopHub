@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Register - ShopHub</title>
+
     {% load static %}
     <link rel="stylesheet" href="{% static 'products/style.css' %}">
 </head>
@@ -12,8 +16,10 @@
 
         <h1>Create Account</h1>
 
-        {% if error %}
-            <p class="error">{{ error }}</p>
+        {% if messages %}
+            {% for message in messages %}
+                <p class="error">{{ message }}</p>
+            {% endfor %}
         {% endif %}
 
         <form method="POST">
@@ -24,6 +30,12 @@
                 name="username"
                 placeholder="Username"
                 required
+            >
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Email"
             >
 
             <input
@@ -46,6 +58,10 @@
         <p>
             Already have an account?
             <a href="{% url 'login' %}">Login</a>
+        </p>
+
+        <p>
+            <a href="{% url 'home' %}">← Back to ShopHub</a>
         </p>
 
     </div>
